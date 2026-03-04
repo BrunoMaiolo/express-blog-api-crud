@@ -16,8 +16,23 @@ const show = (req, res) => {
 };
 
 const store = (req, res) => {
-    console.log(req.body);
-    res.send("Creazione nuovo post");
+
+  const newId = posts[posts.length - 1].id + 1;
+
+  const newPost = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags
+  };
+
+  posts.push(newPost); 
+
+  console.log(posts);
+
+  res.status(201).json(newPost);
+
 };
 
 const update = (req, res) => {
