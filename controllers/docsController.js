@@ -16,6 +16,7 @@ const show = (req, res) => {
 };
 
 const store = (req, res) => {
+    console.log(req.body);
     res.send("Creazione nuovo post");
 };
 
