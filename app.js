@@ -23,7 +23,7 @@ app.use((req, res) => {
 });
 
 //Middelware per errori generici (500)//
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Internal Server Error" });
 });

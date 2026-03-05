@@ -35,7 +35,7 @@ const store = (req, res) => {
 
 };
 
-const update = (req, res, next) => {
+const update = ( req, res, next) => {
 
   return next(new Error("Simulated error for testing error handling middleware"));
 
