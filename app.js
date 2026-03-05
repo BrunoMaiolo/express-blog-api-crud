@@ -4,10 +4,6 @@ const port = 3000;
 
 app.use(express.json());
 
-
-
-
-
 app.get("/", (req, res) => {
   res.send("Home!");
 });
@@ -18,4 +14,10 @@ app.use("/posts", docsRouter);
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
+});
+
+
+//Middelware per rotte non esistenti (404)//
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
 });
