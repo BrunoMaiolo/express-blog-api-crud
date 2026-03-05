@@ -35,9 +35,9 @@ const store = (req, res) => {
 
 };
 
-const update = (req, res) => {
+const update = (req, res, next) => {
 
-  throw new Error("Simulated error for testing error handling middleware");
+  return next(new Error("Simulated error for testing error handling middleware"));
 
   const id = parseInt(req.params.id);
 
