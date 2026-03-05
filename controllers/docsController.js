@@ -37,6 +37,8 @@ const store = (req, res) => {
 
 const update = (req, res) => {
 
+  throw new Error("Simulated error for testing error handling middleware");
+
   const id = parseInt(req.params.id);
 
   const post = posts.find(p => p.id === id);
